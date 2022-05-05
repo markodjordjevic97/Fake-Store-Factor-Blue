@@ -15,7 +15,7 @@
     </div>
     <div class="cart-shop d-flex align-items-center">
       <svg-icon src="assets/svg/ic_shopping-cart.svg" [svgStyle]="{ 'width.px':40, 'height.px': 40 }"></svg-icon>
-      <p class="m-0 mx-3 fake-cart-price"><span class="cart-dollar">$</span> {{cartAmount}}</p>
+      <p class="m-0 mx-3 fake-cart-price"><span class="cart-dollar">$</span> {{cartAmount | number : '1.2-2'}}</p>
     </div>
   </div>
   <!-- Rendering Table -->

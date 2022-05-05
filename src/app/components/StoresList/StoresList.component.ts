@@ -53,6 +53,11 @@ export class StoresListComponent implements OnInit, OnDestroy {
         isAddedToCart: false,
       }));
     this.originalStoresList = this.stores;
+    this.cartAmount = JSON.parse(localStorage.getItem('cartPrice')!)
+    if(JSON.parse(localStorage.getItem('cardItems')!)) {
+      this.stores = JSON.parse(localStorage.getItem('cardItems')!)
+      console.log(this.stores)
+    }
   }
 
   public search(event: any) {
@@ -90,6 +95,9 @@ export class StoresListComponent implements OnInit, OnDestroy {
     else {
       this.cartAmount -= store.price
     }
+
+    localStorage.setItem('cartPrice', JSON.stringify(this.cartAmount))
+    localStorage.setItem('cardItems', JSON.stringify(this.stores))
   }
 
   public identity(index: number, store: Store) {
