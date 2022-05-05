@@ -25,3 +25,14 @@ Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To u
 ## Further help
 
 To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+
+## What i use in this project ?
+
+- I inserted bootstrap v4.6 for design all pages
+- I inserted the Akita State Management Tool to store and read data from it for better performance
+- I also implemented resolver, services, routing
+- Installed libraries that I used:
+  - ngx-pagination
+  - ngx-take-until-destroy
+  - angular-svg-icon
+  - font awesome v5.0.7
