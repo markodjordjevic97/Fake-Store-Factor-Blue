@@ -1,4 +1,3 @@
-
 <div class="fake-store">
   <h1 class="fake-store-heading">Welcome To Fake Store</h1>
   <!-- Search Input -->
@@ -14,7 +13,10 @@
         <i class="fa fa-search" aria-hidden="true"></i>
       </button>
     </div>
-    
+    <div class="cart-shop d-flex align-items-center">
+      <svg-icon src="assets/svg/ic_shopping-cart.svg" [svgStyle]="{ 'width.px':40, 'height.px': 40 }"></svg-icon>
+      <p class="m-0 mx-3 fake-cart-price"><span class="cart-dollar">$</span> {{cartAmount}}</p>
+    </div>
   </div>
   <!-- Rendering Table -->
   <table class="table table-hover table-bordered">
@@ -33,7 +35,9 @@
       >
         <th>{{ store.id }}</th>
         <th>
-          <a class="fake-store-link" routerLink="'store/{{ store.id }}'">{{ store.title }}</a>
+          <a class="fake-store-link" routerLink="{{ store.id }}">{{
+            store.title
+          }}</a>
         </th>
         <th>{{ store.price }}</th>
         <th>{{ store.category }}</th>
@@ -41,10 +45,18 @@
           <img src="{{ store.image }}" class="fake-store-image" alt="Slika" />
         </th>
         <th>{{ store.rating?.rate }}</th>
-        <th>{{ store.addToCart }}</th>
+        <th>
+          <button
+            type="button"
+            class="btn {{!store.isAddedToCart ? 'btn-success' : 'btn-danger'}}"
+            (click)="addToCart(store)"
+          >
+            {{ !store.isAddedToCart ? store.addToCart : store.removeFromCart }}
+          </button>
+        </th>
       </tr>
     </tbody>
-    <tfoot class="d-flex">
+    <tfoot class="d-flex justify-content-center">
       <pagination-controls
         (pageChange)="pageChange($event)"
         class="fake-store-pagination"

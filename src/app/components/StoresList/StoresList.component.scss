@@ -1,11 +1,32 @@
 .fake-store {
   padding: 50px 100px;
+  .table {
+    thead {
+      th {
+        &:nth-child(2) {
+          text-align: center;
+        }
+      }
+    }
+    th {
+      padding: 20px;
+      vertical-align: top;
+      border-top: 1px solid #dee2e6;
+      text-align: center;
+
+      &:nth-child(2) {
+        text-align: left;
+      }
+    }
+  }
+
   .table-hover {
     tr:hover {
       background-color: #f9f9f9;
       transition: all 0.3s ease-in-out;
     }
   }
+
   .fake-store-link {
     &:hover {
       color: #ff7043;
@@ -21,5 +42,24 @@
 
   &-pagination {
     display: flex;
+  }
+
+  .fake-store-pagination {
+    .ngx-pagination {
+      margin: 0px !important;
+      padding: 10px !important;
+    }
+  }
+
+  .fake-cart-price {
+    font-size: 18px;
+    font-weight: 500;
+    color: #919191;
+
+    .cart-dollar {
+      font-weight: 700;
+      font-size: 20px;
+      color: #3c3c3c;
+    }
   }
 }
